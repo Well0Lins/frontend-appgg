@@ -1,0 +1,37 @@
+<div class="search-player-container">
+    <h2>Pesquise invocadores</h2>
+  
+    <!-- Campo para o Nickname -->
+    <div class="input-group">
+      <label for="nickname">Nome do Invocador:</label>
+      <input
+        id="nickname"
+        type="text"
+        [(ngModel)]="nickname"
+        placeholder="Digite o nome do jogador"
+        required
+      />
+    </div>
+  
+    <!-- Campo para o Riot ID -->
+    <div class="input-group">
+      <label for="riotId">Riot ID:</label>
+      <input
+        id="riotId"
+        type="text"
+        [(ngModel)]="riotId"
+        placeholder="Digite o Riot ID"
+        required
+      />
+    </div>
+  
+    <!-- Botão de pesquisa -->
+    <button (click)="onSearch()" class="search-button">Pesquisar</button>
+  
+    <!-- Exibe informações do jogador após pesquisa -->
+    <div *ngIf="playerData" class="player-info">
+      <h3>Informações do Jogador</h3>
+      <p><strong>Nome:</strong> {{ playerData.nickname }} #{{ playerData.riotId }}</p>
+      <p><strong>Historico</strong></p>
+    </div>
+  </div>
