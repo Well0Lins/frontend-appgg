@@ -1,37 +1,41 @@
 <div class="search-player-container">
-    <h2>Pesquise invocadores</h2>
-  
-    <!-- Campo para o Nickname -->
-    <div class="input-group">
-      <label for="nickname">Nome do Invocador:</label>
-      <input
-        id="nickname"
-        type="text"
-        [(ngModel)]="nickname"
-        placeholder="Digite o nome do jogador"
-        required
-      />
+  <h2>Pesquise invocadores</h2>
+
+  <!-- Campo único para Nome do Invocador e Riot ID -->
+  <div class="input-group">
+    <label for="searchInput"></label>
+    <input
+      id="searchInput"
+      type="text"
+      [(ngModel)]="searchQuery"
+      placeholder="Digite o nome do invocador com Riot ID (nome#ID)"
+      required
+    />
+  </div>
+
+  <!-- Botão de pesquisa -->
+  <app-btn-search (searchEvent)="onSearch()"></app-btn-search>
+
+  <!-- Exibe informações do jogador após pesquisa -->
+  <div *ngIf="playerData" class="player-info">
+    <h3>Informações do Jogador</h3>
+    <p><strong>Nome:</strong> {{ playerData.nickname }} #{{ playerData.riotId }}</p>
+    <p><strong>Histórico de Partidas:</strong></p>
+
+    <div *ngIf="playerData.matchHistory && playerData.matchHistory.length > 0">
+      <ul>
+        <li *ngFor="let match of playerData.matchHistory">
+          <strong>Data:</strong> {{ match.date }} <br>
+          <strong>Resultado:</strong> {{ match.result === 'win' ? 'Vitória' : 'Derrota' }} <br>
+          <strong>Duração:</strong> {{ match.duration | date:'mm:ss' }} <br>
+          <strong>Modo:</strong> {{ match.gameMode }} <br>
+          <strong>Campeão:</strong> {{ match.champion }} <br>
+          <strong>KDA:</strong> {{ match.kda }}
+        </li>
+      </ul>
     </div>
-  
-    <!-- Campo para o Riot ID -->
-    <div class="input-group">
-      <label for="riotId">Riot ID:</label>
-      <input
-        id="riotId"
-        type="text"
-        [(ngModel)]="riotId"
-        placeholder="Digite o Riot ID"
-        required
-      />
-    </div>
-  
-    <!-- Botão de pesquisa -->
-    <app-btn-search (searchEvent)="onSearch()"></app-btn-search>
-  
-    <!-- Exibe informações do jogador após pesquisa -->
-    <div *ngIf="playerData" class="player-info">
-      <h3>Informações do Jogador</h3>
-      <p><strong>Nome:</strong> {{ playerData.nickname }} #{{ playerData.riotId }}</p>
-      <p><strong>Historico</strong></p>
+    <div *ngIf="!playerData.matchHistory || playerData.matchHistory.length === 0">
+      <p>Não há histórico de partidas disponível.</p>
     </div>
   </div>
+</div>
