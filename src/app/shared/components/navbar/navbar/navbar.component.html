@@ -1,0 +1,22 @@
+<nav class="navbar">
+    <div class="navbar-container">
+      <div class="navbar-brand">
+        <a routerLink="/" class="logo">AppGG</a>
+      </div>
+  
+      <div class="navbar-links" [class.active]="menuActive">
+        <ul>
+          <li><a routerLink="/" routerLinkActive="active">Início</a></li>
+          <li><a routerLink="/about" routerLinkActive="active">Campeões</a></li>
+          <li><a routerLink="/services" routerLinkActive="active">Classificação</a></li>
+          <li><a routerLink="/contact" routerLinkActive="active">Busca Múltipla</a></li>
+        </ul>
+      </div>
+  
+      <div class="navbar-toggle" (click)="toggleMenu()">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </div>
+  </nav>

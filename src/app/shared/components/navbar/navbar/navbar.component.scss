@@ -1,0 +1,92 @@
+// Estilos principais da navbar
+.navbar {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .navbar-brand .logo {
+    font-size: 24px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .navbar-links ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar-links li {
+    margin: 0 15px;
+  }
+  
+  .navbar-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    transition: color 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .navbar-links a:hover,
+  .navbar-links a.active {
+    color: #3498db;
+  }
+  
+  // Estilo do menu hamburguer
+  .navbar-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .navbar-toggle .bar {
+    width: 30px;
+    height: 4px;
+    background-color: #fff;
+    margin: 5px 0;
+  }
+  
+  // Responsividade para telas pequenas (dispositivos móveis)
+  @media (max-width: 768px) {
+    .navbar-links {
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: #333;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease-in-out;
+      cursor: pointer;
+    }
+  
+    .navbar-links.active {
+      transform: translateX(0);
+    }
+  
+    .navbar-links li {
+      margin: 20px 0;
+    }
+  
+    .navbar-toggle {
+      display: flex;
+    }
+  }
