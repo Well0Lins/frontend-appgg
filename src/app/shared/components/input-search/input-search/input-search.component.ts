@@ -2,11 +2,12 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { BtnSearchComponent } from "../../btn-search/btn-search/btn-search.component";
 
 @Component({
   selector: 'app-input-search',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, BtnSearchComponent],
   templateUrl: './input-search.component.html',
   styleUrl: './input-search.component.scss'
 })

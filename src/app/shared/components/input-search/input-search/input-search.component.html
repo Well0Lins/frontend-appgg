@@ -26,7 +26,7 @@
     </div>
   
     <!-- Botão de pesquisa -->
-    <button (click)="onSearch()" class="search-button">Pesquisar</button>
+    <app-btn-search (searchEvent)="onSearch()"></app-btn-search>
   
     <!-- Exibe informações do jogador após pesquisa -->
     <div *ngIf="playerData" class="player-info">
