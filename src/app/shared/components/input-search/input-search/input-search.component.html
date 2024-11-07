@@ -25,12 +25,13 @@
     <div *ngIf="playerData.matchHistory && playerData.matchHistory.length > 0">
       <ul>
         <li *ngFor="let match of playerData.matchHistory">
-          <strong>Data:</strong> {{ match.date }} <br>
+          <strong>Data:</strong> {{ match.date | date:'dd/MM/yyyy' }} <br>
           <strong>Resultado:</strong> {{ match.result === 'win' ? 'Vitória' : 'Derrota' }} <br>
-          <strong>Duração:</strong> {{ match.duration | date:'mm:ss' }} <br>
+          <strong>Duração:</strong> {{ formatDuration(match.duration) }} <br>
           <strong>Modo:</strong> {{ match.gameMode }} <br>
           <strong>Campeão:</strong> {{ match.champion }} <br>
-          <strong>KDA:</strong> {{ match.kda }}
+          <strong>KDA:</strong> {{ match.kda }}<br>
+          <strong></strong><br>
         </li>
       </ul>
     </div>

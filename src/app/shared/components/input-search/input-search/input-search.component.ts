@@ -28,6 +28,8 @@ interface PlayerData {
   templateUrl: './input-search.component.html',
   styleUrl: './input-search.component.scss'
 })
+
+
 export class InputSearchComponent {
   searchQuery: string = '';  // Variável para armazenar o texto do campo de busca
   nickname: string = '';
@@ -35,6 +37,16 @@ export class InputSearchComponent {
   playerData: PlayerData | null = null;  // Dados do jogador, incluindo o histórico de partidas
 
   constructor(private playerService: PlayerService) {}
+
+  
+formatDuration(seconds: number): string {
+  const minutes = Math.floor(seconds / 60);      // Calcula os minutos
+  const remainingSeconds = seconds % 60;         // Calcula os segundos restantes
+  return `${this.padZero(minutes)}:${this.padZero(remainingSeconds)}`; // Formata para mm:ss
+}
+padZero(value: number): string {
+  return value < 10 ? `0${value}` : `${value}`; // Adiciona o zero à esquerda se necessário
+}
 
   onSearch() {
     const parts = this.searchQuery.split('#');
