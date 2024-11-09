@@ -1,9 +1,10 @@
+<!-- input-search.component.html -->
 <div class="search-player-container">
   <h2>Pesquise invocadores</h2>
 
   <!-- Campo único para Nome do Invocador e Riot ID -->
   <div class="input-group">
-    <label for="searchInput"></label>
+    <label for="searchInput">Nome do Invocador com Riot ID:</label>
     <input
       id="searchInput"
       type="text"
@@ -15,28 +16,5 @@
 
   <!-- Botão de pesquisa -->
   <app-btn-search (searchEvent)="onSearch()"></app-btn-search>
-
-  <!-- Exibe informações do jogador após pesquisa -->
-  <div *ngIf="playerData" class="player-info">
-    <h3>Informações do Jogador</h3>
-    <p><strong>Nome:</strong> {{ playerData.nickname }} #{{ playerData.riotId }}</p>
-    <p><strong>Histórico de Partidas:</strong></p>
-
-    <div *ngIf="playerData.matchHistory && playerData.matchHistory.length > 0">
-      <ul>
-        <li *ngFor="let match of playerData.matchHistory">
-          <strong>Data:</strong> {{ match.date | date:'dd/MM/yyyy' }} <br>
-          <strong>Resultado:</strong> {{ match.result === 'win' ? 'Vitória' : 'Derrota' }} <br>
-          <strong>Duração:</strong> {{ formatDuration(match.duration) }} <br>
-          <strong>Modo:</strong> {{ match.gameMode }} <br>
-          <strong>Campeão:</strong> {{ match.champion }} <br>
-          <strong>KDA:</strong> {{ match.kda }}<br>
-          <strong></strong><br>
-        </li>
-      </ul>
-    </div>
-    <div *ngIf="!playerData.matchHistory || playerData.matchHistory.length === 0">
-      <p>Não há histórico de partidas disponível.</p>
-    </div>
-  </div>
+ 
 </div>

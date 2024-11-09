@@ -1,25 +1,15 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';  // 'of' é usado para retornar um Observable com dados mockados
+import { PlayerData } from '../../shared/models/player-data.interface';
+import { HttpClient } from '@angular/common/http';
 
-interface MatchHistory {
-  date: string;
-  result: 'win' | 'loss';
-  duration: number;
-  gameMode: string;
-  champion: string;
-  kda: string;
-}
 
-interface PlayerData {
-  nickname: string;
-  riotId: string;
-  matchHistory: MatchHistory[];
-}
 
 @Injectable({
   providedIn: 'root'
 })
 export class PlayerService {
+  
 
   getPlayerData(nickname: string, riotId: string): Observable<PlayerData> {
 
@@ -56,7 +46,12 @@ export class PlayerService {
       ]
     };
 
-    // Retornando o dado mockado usando 'of()' para simular um Observable
+    /*
+     const url = ``;  //
+     return this.http.get<PlayerData>(url);
+    */
+
+    
     return of(mockData);
   }
 }
