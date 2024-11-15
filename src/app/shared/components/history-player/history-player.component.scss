@@ -1,0 +1,100 @@
+// Definição da variável de cor
+
+  // Títulos principais
+  p{
+    text-align: center;
+    color: var(--grey);
+  }
+
+  h2, h3 {
+    color: var(--secondary);
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  
+ 
+  .loading, .error {
+    color: var(--white);
+    font-size: 16px;
+    padding: 10px;
+    background-color: var(--secondary-010); // Cor de fundo em torno do tema
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  // Estilos do histórico do invocador e tabela
+  .match-history-container {
+    margin-top: 30px;
+  }
+  
+  .match-history-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  
+    thead {
+      background-color: var(--secondary-010); // Usando a cor no cabeçalho
+      color: #fff;
+    }
+  
+    th, td {
+      padding: 10px;
+      text-align: left;
+      border: 1px solid #ddd;
+    }
+  
+    th {
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 14px;
+    }
+  
+
+
+  
+    tbody tr:hover {
+      background-color: var(--grey);
+      cursor: pointer;
+    }
+
+  }
+  
+  // Estilos para quando não há histórico
+  ng-template {
+    color: #555;
+    font-size: 16px;
+    font-style: italic;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  
+  // Responsividade 
+  @media screen and (max-width: 768px) {
+    .match-history-table {
+      font-size: 12px;
+      margin-top: 15px;
+    }
+  
+    .match-history-table th,
+    .match-history-table td {
+      padding: 8px;
+    }
+  
+    .container {
+      padding: 10px;
+    }
+  
+    h2, h3 {
+      font-size: 18px;
+    }
+  
+    .loading, .error {
+      font-size: 14px;
+    }
+  }
+  

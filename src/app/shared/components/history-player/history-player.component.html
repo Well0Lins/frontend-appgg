@@ -1,0 +1,39 @@
+<div *ngIf="loading">Carregando...</div>
+
+<div *ngIf="error">
+  <p>Ocorreu um erro ao buscar os dados do jogador. Tente novamente mais tarde.</p>
+</div>
+
+<div *ngIf="!loading && playerData && playerData.matchHistory && playerData.matchHistory.length > 0; else noHistory">
+
+  <p><strong>Nome:</strong> {{ playerData?.nickname }}</p>
+  <p><strong>Riot ID: </strong> #{{ playerData?.riotId }}</p>
+
+  <h3>Histórico de Partidas</h3>
+  <table class="match-history-table">
+    <thead>
+      <tr>
+        <th>Data</th>
+        <th>Resultado</th>
+        <th>Duração</th>
+        <th>Modo</th>
+        <th>Campeão</th>
+        <th>KDA</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let match of playerData.matchHistory">
+        <td>{{ match.date }}</td>
+        <td>{{ match.result === 'win' ? 'Vitória' : 'Derrota' }}</td>
+        <td>{{ formatDuration(match.duration) }}</td>
+        <td>{{ match.gameMode }}</td>
+        <td>{{ match.champion }}</td>
+        <td>{{ match.kda }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<ng-template #noHistory>
+  <p>Não há histórico de partidas disponível.</p>
+</ng-template>

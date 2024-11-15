@@ -1,25 +1,10 @@
-<!-- summoner-page.component.html -->
-<div class="summoner-info-container" *ngIf="playerData">
+<app-navbar/>
+<div class="summoner-info-container">
     <h2>Informações do Invocador</h2>
+
+    <app-history-player/>
   
-    <p><strong>Nome:</strong> {{ playerData.nickname }} #{{ playerData.riotId }}</p>
-  
-    <div *ngIf="playerData.matchHistory && playerData.matchHistory.length > 0">
-      <h3>Histórico de Partidas:</h3>
-      <ul>
-        <li *ngFor="let match of playerData.matchHistory">
-          <strong>Data:</strong> {{ match.date }} <br>
-          <strong>Resultado:</strong> {{ match.result === 'win' ? 'Vitória' : 'Derrota' }} <br>
-          <strong>Duração:</strong> {{ formatDuration(match.duration) }} <br>
-          <strong>Modo:</strong> {{ match.gameMode }} <br>
-          <strong>Campeão:</strong> {{ match.champion }} <br>
-          <strong>KDA:</strong> {{ match.kda }}<br>
-        </li>
-      </ul>
-    </div>
-  
-    <div *ngIf="!playerData.matchHistory || playerData.matchHistory.length === 0">
-      <p>Não há histórico de partidas disponível.</p>
-    </div>
+
   </div>
-  
+
+ 
