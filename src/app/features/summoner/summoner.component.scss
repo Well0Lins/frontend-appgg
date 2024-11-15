@@ -1,60 +1,13 @@
 .summoner-info-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;  // Centraliza verticalmente
-    align-items: center;      // Centraliza horizontalmente
-    max-width: 800px;
-    margin: 0 auto;  // Centraliza horizontalmente na tela
+
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;    
+  max-width: 800px;
+  margin: 25px auto; 
   
-    // Adiciona um fundo sutil e uma borda arredondada para dar um visual mais limpo
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  
-    // Espaçamento interno
-    padding: 30px;
-    
-    // Ajustes de tipografia
-    h2 {
-      font-size: 2rem;
-      font-weight: 600;
-      margin-bottom: 20px;
-      color: #333;
-    }
-  
-    p {
-      font-size: 1rem;
-      color: #555;
-      margin: 10px 0;
-    }
-  
-    // Para a lista de histórico de partidas
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      width: 100%;  // Ocupa toda a largura disponível
-    }
-  
-    li {
-      background-color: #f9f9f9;
-      margin: 10px 0;
-      padding: 15px;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-      
-      // Texto dentro de cada item
-      strong {
-        font-weight: 600;
-      }
-  
-      // Pequeno espaçamento entre as linhas de texto
-      & > br {
-        margin-bottom: 5px;
-      }
-    }
-  
-    // Responsividade para telas menores
+    // Responsividade
     @media (max-width: 768px) {
       .summoner-info-container {
         max-width: 100%;
@@ -74,5 +27,5 @@
         font-size: 0.9rem;
       }
     }
-  }
+}
   

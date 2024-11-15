@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';  // 'of' é usado para retornar um Observable com dados mockados
+import { Observable, of } from 'rxjs';
 import { PlayerData } from '../../shared/models/player-data.interface';
 
 
@@ -18,12 +18,14 @@ export class PlayerService {
       matchHistory: [
           
         {
-          date: '2024-11-06',
+          date: '2024-11-06', // need url icon profile
           result: 'win',
           duration: 1524,
           gameMode: 'Aram',
           champion: 'Ekko',
           kda: '21/13/26'
+          // id icon profile
+    
         },
         {
           date: '2024-11-6',

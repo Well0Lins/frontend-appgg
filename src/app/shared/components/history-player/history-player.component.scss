@@ -1,13 +1,11 @@
-// Definição da variável de cor
 
-  // Títulos principais
   p{
     text-align: center;
     color: var(--grey);
   }
 
   h2, h3 {
-    color: var(--secondary);
+    color: var(--white);
     font-weight: 600;
     margin-bottom: 10px;
     text-align: center;
@@ -19,13 +17,13 @@
     color: var(--white);
     font-size: 16px;
     padding: 10px;
-    background-color: var(--secondary-010); // Cor de fundo em torno do tema
+    background-color: var(--secondary-010); 
     border-radius: 5px;
     margin-bottom: 20px;
     text-align: center;
   }
   
-  // Estilos do histórico do invocador e tabela
+ 
   .match-history-container {
     margin-top: 30px;
   }
@@ -34,17 +32,16 @@
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   
     thead {
-      background-color: var(--secondary-010); // Usando a cor no cabeçalho
-      color: #fff;
+      color: var(--charcoal);
     }
   
     th, td {
       padding: 10px;
       text-align: left;
-      border: 1px solid #ddd;
+      border: none;
+      color: var(--grey);
     }
   
     th {
@@ -53,17 +50,15 @@
       font-size: 14px;
     }
   
-
-
   
     tbody tr:hover {
-      background-color: var(--grey);
+      background-color: var(--black-010);
       cursor: pointer;
     }
 
   }
   
-  // Estilos para quando não há histórico
+ 
   ng-template {
     color: #555;
     font-size: 16px;

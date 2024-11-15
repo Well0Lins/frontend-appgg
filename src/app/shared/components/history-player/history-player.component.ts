@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { CommonModule } from '@angular/common'; // Importando CommonModule para usar ngIf e ngFor
-import { PlayerService } from '../../../core/services/player.Service'; // Serviço do jogador
-import { PlayerData } from '../../models/player-data.interface'; // Interface dos dados do jogador
+import { CommonModule } from '@angular/common';
+import { PlayerService } from '../../../core/services/player.Service'; 
+import { PlayerData } from '../../models/player-data.interface'; 
 
 @Component({
   selector: 'app-history-player',
-  standalone: true,  // Definir o componente como standalone
-  imports: [CommonModule], // Importa CommonModule para usar ngIf, ngFor
+  standalone: true,  
+  imports: [CommonModule], 
   templateUrl: './history-player.component.html',
   styleUrls: ['./history-player.component.scss']
 })
@@ -25,18 +25,19 @@ export class HistoryPlayerComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // Pegando os parâmetros da URL
+    // Url param
     this.route.params.subscribe(params => {
       this.nickname = params['nickname'];
       this.riotId = params['riotId'];
 
-      // Chamando o serviço para buscar os dados
+      // Service
       this.playerService.getPlayerData(this.nickname, this.riotId).subscribe(
         (data: PlayerData) => {
-          // Garantir que matchHistory nunca seja null ou undefined
+          // Para o matchHistory nunca ser null ou undef
           this.playerData = { 
             ...data,
-            matchHistory: data.matchHistory ?? []  // Garantir que matchHistory seja sempre um array
+            // Garantir que matchHistory seja sempre um array
+            matchHistory: data.matchHistory ?? []  
           };
           this.loading = false;
         },
@@ -49,14 +50,13 @@ export class HistoryPlayerComponent implements OnInit {
     });
   }
 
-  // Função de formatação de duração
   formatDuration(seconds: number): string {
     const minutes = Math.floor(seconds / 60);
     const remainingSeconds = seconds % 60;
     return `${this.padZero(minutes)}:${this.padZero(remainingSeconds)}`;
   }
 
-  // Função para adicionar zero à frente se o valor for menor que 10
+  
   padZero(value: number): string {
     return value < 10 ? `0${value}` : `${value}`;
   }
