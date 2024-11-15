@@ -23,7 +23,7 @@
     </thead>
     <tbody>
       <tr *ngFor="let match of playerData.matchHistory">
-        <td>{{ match.date }}</td>
+        <td>{{ match.date | date:'dd/MM/yyyy'}}</td>
         <td>{{ match.result === 'win' ? 'Vitória' : 'Derrota' }}</td>
         <td>{{ formatDuration(match.duration) }}</td>
         <td>{{ match.gameMode }}</td>
