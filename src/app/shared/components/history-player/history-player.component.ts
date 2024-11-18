@@ -7,7 +7,7 @@ import { PlayerData } from '../../models/player-data.interface';
 @Component({
   selector: 'app-history-player',
   standalone: true,  
-  imports: [CommonModule, ], 
+  imports: [CommonModule,], 
   templateUrl: './history-player.component.html',
   styleUrls: ['./history-player.component.scss']
 })
@@ -25,7 +25,7 @@ export class HistoryPlayerComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // Url param
+    // Url params
     this.route.params.subscribe(params => {
       this.nickname = params['nickname'];
       this.riotId = params['riotId'];

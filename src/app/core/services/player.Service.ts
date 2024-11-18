@@ -15,6 +15,7 @@ export class PlayerService {
     const mockData: PlayerData = {
       nickname: nickname,
       riotId: riotId,
+      profileIconId: 978,
       matchHistory: [
           
         {
@@ -23,8 +24,8 @@ export class PlayerService {
           duration: 1524,
           gameMode: 'Aram',
           champion: 'Ekko',
-          kda: '21/13/26'
-          // id icon profile
+          kda: '21/13/26',
+          
     
         },
         {
@@ -33,7 +34,9 @@ export class PlayerService {
           duration: 2124, 
           gameMode: 'Flex',
           champion: 'Kindred',
-          kda: '18/10/5'
+          kda: '18/10/5',
+          
+
         },
         {
           date: '2024-11-5',
@@ -41,7 +44,9 @@ export class PlayerService {
           duration: 2310, 
           gameMode: 'Flex',
           champion: 'Ekko',
-          kda: '18/3/13'
+          kda: '18/3/13',
+          
+
         },
         {
           date: "2024-11-07",
@@ -49,7 +54,9 @@ export class PlayerService {
           duration: 1782,
           gameMode: "SoloQ",
           champion: "Zed",
-          kda: "12/4/8"
+          kda: "12/4/8",
+          
+
         },
         {
           date: "2024-11-07",
@@ -57,7 +64,9 @@ export class PlayerService {
           duration: 1940,
           gameMode: "Aram",
           champion: "Sivir",
-          kda: "10/9/14"
+          kda: "10/9/14",
+         
+
         },
         {
           date: "2024-11-04",
@@ -65,7 +74,9 @@ export class PlayerService {
           duration: 2200,
           gameMode: "Flex",
           champion: "Lux",
-          kda: "15/2/12"
+          kda: "15/2/12",
+          
+
         },
         {
           date: "2024-11-03",
@@ -73,7 +84,9 @@ export class PlayerService {
           duration: 1890,
           gameMode: "Aram",
           champion: "Miss Fortune",
-          kda: "22/6/10"
+          kda: "22/6/10",
+         
+
         },
         {
           date: "2024-11-02",
@@ -81,7 +94,9 @@ export class PlayerService {
           duration: 2500,
           gameMode: "SoloQ",
           champion: "Thresh",
-          kda: "5/9/23"
+          kda: "5/9/23",
+          
+
         },
         {
           date: "2024-11-01",
@@ -89,7 +104,9 @@ export class PlayerService {
           duration: 2100,
           gameMode: "Flex",
           champion: "LeBlanc",
-          kda: "14/5/9"
+          kda: "14/5/9",
+          
+
         }
       ]
     };

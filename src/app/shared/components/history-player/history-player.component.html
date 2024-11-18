@@ -6,18 +6,12 @@
 
 <div *ngIf="!loading && playerData && playerData.matchHistory && playerData.matchHistory.length > 0; else noHistory">
 
-    <div>
-        <p> <strong>Nome:</strong> {{ playerData.nickname }} <strong>Riot ID: </strong> #{{ playerData.riotId }}</p>
-    </div>
-  
-
  <table class="match-history-table">
   <thead>
     <tr>
       <th>Modo</th>
       <th>Campeão</th>
       <th>KDA</th>
-      <th>Resultado</th>
       <th>Duração</th>
       <th>Data</th>
     </tr>
@@ -27,7 +21,6 @@
       <td>{{ match.gameMode }}</td>
       <td>{{ match.champion }}</td>
       <td>{{ match.kda }}</td>
-      <td>{{ match.result === 'win' ? 'Vitória' : 'Derrota' }}</td>
       <td>{{ formatDuration(match.duration) }}</td>
       <td>{{ match.date | date:'dd/MM/yyyy' }}</td>
     </tr>

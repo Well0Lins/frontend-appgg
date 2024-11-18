@@ -5,10 +5,12 @@ export interface MatchHistory {
     gameMode: string;
     champion: string;
     kda: string;
+
   }
   
   export interface PlayerData {
     nickname: string;
     riotId: string;
     matchHistory: MatchHistory[];
+    profileIconId: number;
   }
