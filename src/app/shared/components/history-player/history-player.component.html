@@ -7,36 +7,36 @@
 <div *ngIf="!loading && playerData && playerData.matchHistory && playerData.matchHistory.length > 0; else noHistory">
 
     <div>
-        <p> <strong>Nome:</strong> {{ playerData?.nickname }} <strong>Riot ID: </strong> #{{ playerData?.riotId }}</p>
+        <p> <strong>Nome:</strong> {{ playerData.nickname }} <strong>Riot ID: </strong> #{{ playerData.riotId }}</p>
     </div>
   
 
-  <table class="match-history-table">
-    <thead>
-      <tr>
-        <th>Modo</th>
-        <th>Campeão</th>
-        <th>KDA</th>
-        <th>Resultado</th>
-        <th>Duração</th>
-        <th>Data</th>
+ <table class="match-history-table">
+  <thead>
+    <tr>
+      <th>Modo</th>
+      <th>Campeão</th>
+      <th>KDA</th>
+      <th>Resultado</th>
+      <th>Duração</th>
+      <th>Data</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let match of playerData.matchHistory" [ngClass]="{ 'win': match.result === 'win', 'loss': match.result === 'loss' }">
+      <td>{{ match.gameMode }}</td>
+      <td>{{ match.champion }}</td>
+      <td>{{ match.kda }}</td>
+      <td>{{ match.result === 'win' ? 'Vitória' : 'Derrota' }}</td>
+      <td>{{ formatDuration(match.duration) }}</td>
+      <td>{{ match.date | date:'dd/MM/yyyy' }}</td>
+    </tr>
+  </tbody>
+</table>
 
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let match of playerData.matchHistory">
-        <td>{{ match.gameMode }}</td>
-        <td>{{ match.champion }}</td>
-        <td>{{ match.kda }}</td>
-        <td>{{ match.result === 'win' ? 'Vitória' : 'Derrota' }}</td>
-        <td>{{ formatDuration(match.duration) }}</td>  
-        <td>{{ match.date | date:'dd/MM/yyyy'}}</td>
-  
-      </tr>
-    </tbody>
-  </table>
 </div>
 
 <ng-template #noHistory>
-  <p>Não há histórico de partidas disponível.</p>
+  <p>Não há histórico de partidas disponível...</p>
 </ng-template>
+

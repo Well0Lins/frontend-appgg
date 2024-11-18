@@ -1,95 +1,37 @@
+.match-history-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
 
-  p{
-    text-align: center;
+  thead {
+    color: var(--charcoal);
+  }
+
+  th, td {
+    padding: 10px;
+    text-align: left;
+    border: none;
     color: var(--grey);
   }
 
-  h2, h3 {
-    color: var(--white);
-    font-weight: 600;
-    margin-bottom: 10px;
-    text-align: center;
+  th {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
   }
 
-  
- 
-  .loading, .error {
-    color: var(--white);
-    font-size: 16px;
-    padding: 10px;
-    background-color: var(--secondary-010); 
-    border-radius: 5px;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
- 
-  .match-history-container {
-    margin-top: 30px;
-  }
-  
-  .match-history-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-  
-    thead {
-      color: var(--charcoal);
+  tbody tr {
+    &.win {
+      background-color: var(--background-win); 
     }
-  
-    th, td {
-      padding: 10px;
-      text-align: left;
-      border: none;
-      color: var(--grey);
+
+    &.loss {
+      background-color: var(--background-lose); 
     }
-  
-    th {
-      font-weight: bold;
-      text-transform: uppercase;
-      font-size: 14px;
-    }
-  
-  
-    tbody tr:hover {
+
+    &:hover {
       background-color: var(--black-010);
       cursor: pointer;
     }
-
   }
-  
- 
-  ng-template {
-    color: #555;
-    font-size: 16px;
-    font-style: italic;
-    text-align: center;
-    margin-top: 20px;
-  }
-
-  
-  // Responsividade 
-  @media screen and (max-width: 768px) {
-    .match-history-table {
-      font-size: 12px;
-      margin-top: 15px;
-    }
-  
-    .match-history-table th,
-    .match-history-table td {
-      padding: 8px;
-    }
-  
-    .container {
-      padding: 10px;
-    }
-  
-    h2, h3 {
-      font-size: 18px;
-    }
-  
-    .loading, .error {
-      font-size: 14px;
-    }
-  }
-  
+}

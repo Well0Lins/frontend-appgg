@@ -3,50 +3,52 @@
     --primary: #2fbf71;
     --primary-010: #21804d;
     --primary-020: #0d6c39;
-    --primary-030: #084f2a;  /* Mais escuro */
-    --primary-040: #053b20;  /* Mais escuro ainda */
-    --primary-light: #52e68f; /* Mais claro */
+    --primary-030: #084f2a;  
+    --primary-040: #053b20;  
+    --primary-light: #52e68f; 
 
     /* Secondary Colors */
     --secondary: #06628a;
     --secondary-010: #06374e;
-    --secondary-020: #041e30; /* Mais escuro */
-    --secondary-light: #3392c9; /* Mais claro */
+    --secondary-020: #041e30; 
+    --secondary-light: #3392c9; 
 
     /* Neutral Colors */
     --white: #fff;
     --black: #10101a;
     --black-010: #2a2a30;
     --grey: #9b9ba0;
-    --grey-010: #b5b5bb; /* Mais claro */
-    --grey-020: #757578; /* Mais escuro */
-    --grey-030: #4a4a4f; /* Mais escuro ainda */
-    --silver: #c0c0c0; /* Prata */
-    --charcoal: #444444; /* Carvão */
+    --grey-010: #b5b5bb; 
+    --grey-020: #757578;
+    --grey-030: #4a4a4f; 
+    --silver: #c0c0c0; 
+    --charcoal: #444444; 
 
     /* Highlight Colors */
-    --accent: #ffbf00; /* Amarelo dourado */
-    --accent-010: #e6a800; /* Amarelo mais escuro */
-    --accent-light: #ffcf58; /* Amarelo mais claro */
+    --accent: #ffbf00; 
+    --accent-010: #e6a800; 
+    --accent-light: #ffcf58; 
 
-    --danger: #e74c3c; /* Vermelho para erros */
-    --warning: #f39c12; /* Laranja para alertas */
-    --success: #2ecc71; /* Verde para sucesso */
-    --info: #3498db; /* Azul para informações */
+    --danger: #e74c3c; 
+    --warning: #f39c12; 
+    --success: #2ecc71; 
+    --info: #3498db; 
     
     /* Background Colors */
-    --background-light: #f9f9f9; /* Fundo claro */
-    --background-dark: #1e1e1e; /* Fundo escuro */
-    --background-secondary: #f0f1f3; /* Fundo secundário claro */
-    
+    --background-light: #f9f9f9;
+    --background-dark: #1e1e1e; 
+    --background-secondary: #f0f1f3; 
+    --background-win: #28344E;
+    --background-lose: #7f2830;    
+
     /* Border Colors */
-    --border: #ccc; /* Bordas comuns */
-    --border-dark: #888; /* Bordas mais escuras */
-    --border-light: #e0e0e0; /* Bordas mais claras */
+    --border: #ccc; 
+    --border-dark: #888; 
+    --border-light: #e0e0e0; 
     
     /* Custom Shades */
-    --light-blue: #5dade2; /* Azul claro */
-    --dark-blue: #154360; /* Azul escuro */
-    --light-green: #a1d88f; /* Verde claro */
-    --dark-green: #1c5432; /* Verde escuro */
+    --light-blue: #5dade2; 
+    --dark-blue: #154360; 
+    --light-green: #a1d88f; 
+    --dark-green: #1c5432; 
 }

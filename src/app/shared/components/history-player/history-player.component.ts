@@ -7,7 +7,7 @@ import { PlayerData } from '../../models/player-data.interface';
 @Component({
   selector: 'app-history-player',
   standalone: true,  
-  imports: [CommonModule], 
+  imports: [CommonModule, ], 
   templateUrl: './history-player.component.html',
   styleUrls: ['./history-player.component.scss']
 })
