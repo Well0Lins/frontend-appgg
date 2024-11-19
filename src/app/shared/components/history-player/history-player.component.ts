@@ -48,6 +48,7 @@ export class HistoryPlayerComponent implements OnInit {
         }
       );
     });
+    
   }
 
   formatDuration(seconds: number): string {

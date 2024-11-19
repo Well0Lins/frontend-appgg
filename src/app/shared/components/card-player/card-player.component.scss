@@ -26,7 +26,7 @@
   
       
       .player {
-        margin: 10px;
+        margin: 20px auto;
         p {
           font-size: 30px;
           margin: 0;
@@ -37,7 +37,7 @@
       .favorite-button {
         width: 22px; 
         height: 22px;
-        margin: 12px;
+        margin: 20px 10px;
         background-color: transparent;
         border: 2px solid var(--grey);
         border-radius: 5px;

@@ -5,7 +5,7 @@ import { PlayerData } from '../../shared/models/player-data.interface';
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from "../../shared/components/navbar/navbar/navbar.component";
 import { HistoryPlayerComponent } from "../../shared/components/history-player/history-player.component";
-import { CardPlayerComponent } from "../../shared/card-player/card-player.component";
+import { CardPlayerComponent } from "../../shared/components/card-player/card-player.component";
 
 @Component({
   selector: 'app-summoner',

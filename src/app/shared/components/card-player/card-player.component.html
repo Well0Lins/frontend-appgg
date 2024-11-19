@@ -9,16 +9,12 @@
         <div class="player">
             <p>{{ playerData.nickname }} #{{ playerData.riotId }}</p>
         </div>
-        
 
         <div class="favorite-button" [ngClass]="{'favorited': isFavorite}" (click)="toggleFavorite()">
 
             <mat-icon>star</mat-icon>
-        </div>
-
-
-        
-      
+        </div>      
     </div>
+    
 </div>
 

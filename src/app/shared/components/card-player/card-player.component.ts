@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { PlayerData } from '../models/player-data.interface';
+import { PlayerData } from '../../models/player-data.interface';
 import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { PlayerService } from '../../core/services/player.Service'; // Verifique se o caminho está correto
+import { PlayerService } from '../../../core/services/player.Service'; // Verifique se o caminho está correto
 import { MatIconModule } from '@angular/material/icon'
 
 
@@ -19,7 +19,7 @@ export class CardPlayerComponent implements OnInit {
   playerData: PlayerData | null = null;
   profileIconId: number = 0;
   isFavorite: boolean = false;
-
+  isUpdate : boolean = false;
   constructor(
     private route: ActivatedRoute,
     private playerService: PlayerService
@@ -47,6 +47,6 @@ export class CardPlayerComponent implements OnInit {
 
   toggleFavorite() {
     this.isFavorite = !this.isFavorite;
-    console.log('favoritado')
+    // console.log('favoritado')
   }
 }
