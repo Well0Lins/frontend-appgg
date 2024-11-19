@@ -49,4 +49,8 @@ export class CardPlayerComponent implements OnInit {
     this.isFavorite = !this.isFavorite;
     // console.log('favoritado')
   }
+
+  notifyUpdate(): void {
+    this.playerService.notifyTableUpdate();
+  }
 }

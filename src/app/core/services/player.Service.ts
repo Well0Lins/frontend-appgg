@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable, of, Subject } from 'rxjs';
 import { PlayerData } from '../../shared/models/player-data.interface';
 
 
@@ -8,7 +8,8 @@ import { PlayerData } from '../../shared/models/player-data.interface';
   providedIn: 'root'
 })
 export class PlayerService {
-  
+  private updateTableSubject = new Subject<void>();
+  updateTable$ = this.updateTableSubject.asObservable();
 
   getPlayerData(nickname: string, riotId: string): Observable<PlayerData> {
 
@@ -118,5 +119,9 @@ export class PlayerService {
 
     
     return of(mockData);
+  }
+
+  notifyTableUpdate(): void {
+    this.updateTableSubject.next();
   }
 }

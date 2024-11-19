@@ -1,20 +1,24 @@
 <div class="container-card">
-    
     <div class="img-icon">
-        <img [src]="'https://ddragon.leagueoflegends.com/cdn/14.22.1/img/profileicon/' + playerData?.profileIconId + '.png'" alt="Player Icon">
-    </div>    
+        <img 
+            [src]="'https://ddragon.leagueoflegends.com/cdn/14.22.1/img/profileicon/' + playerData?.profileIconId + '.png'" 
+            alt="Player Icon">
+    </div>
 
-    <div *ngIf="playerData" class="info-player">
-
-        <div class="player">
-            <p>{{ playerData.nickname }} #{{ playerData.riotId }}</p>
+    <div class="player-info">
+        
+        <div class="info-header">
+            <p class="nickname">{{ playerData?.nickname }} #{{ playerData?.riotId }}</p>
+            <div class="favorite-button" [ngClass]="{'favorited': isFavorite}" (click)="toggleFavorite()">
+                <mat-icon>star</mat-icon>
+            </div>
         </div>
 
-        <div class="favorite-button" [ngClass]="{'favorited': isFavorite}" (click)="toggleFavorite()">
-
-            <mat-icon>star</mat-icon>
-        </div>      
+        
+        <div class="update-button" (click)="notifyUpdate()">
+            <p>update</p>
+            <mat-icon>refresh</mat-icon>
+        </div>
     </div>
-    
 </div>
 

@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { Subscription } from 'rxjs';
 import { PlayerService } from '../../../core/services/player.Service'; 
 import { PlayerData } from '../../models/player-data.interface'; 
 
@@ -11,7 +12,7 @@ import { PlayerData } from '../../models/player-data.interface';
   templateUrl: './history-player.component.html',
   styleUrls: ['./history-player.component.scss']
 })
-export class HistoryPlayerComponent implements OnInit {
+export class HistoryPlayerComponent implements OnInit, OnDestroy {
 
   nickname: string = '';
   riotId: string = '';
@@ -19,24 +20,35 @@ export class HistoryPlayerComponent implements OnInit {
   loading: boolean = true;
   error: boolean = false;
 
+  private subscription = new Subscription();
+
   constructor(
     private route: ActivatedRoute,
     private playerService: PlayerService
   ) {}
 
   ngOnInit(): void {
+
+    // Event att
+    this.subscription.add(
+      this.playerService.updateTable$.subscribe(() => {
+        this.loadPlayerData(); // recarregar os dados
+      })
+    )
+
     // Url params
     this.route.params.subscribe(params => {
       this.nickname = params['nickname'];
       this.riotId = params['riotId'];
+      this.loadPlayerData();
 
       // Service
       this.playerService.getPlayerData(this.nickname, this.riotId).subscribe(
         (data: PlayerData) => {
-          // Para o matchHistory nunca ser null ou undef
+          
           this.playerData = { 
             ...data,
-            // Garantir que matchHistory seja sempre um array
+            
             matchHistory: data.matchHistory ?? []  
           };
           this.loading = false;
@@ -49,6 +61,33 @@ export class HistoryPlayerComponent implements OnInit {
       );
     });
     
+  }
+
+  loadPlayerData(): void {
+    this.loading = true;
+    this.error = false;
+
+    this.playerService.getPlayerData(this.nickname, this.riotId).subscribe(
+      (data: PlayerData) => {
+        this.playerData = { 
+          ...data,
+          matchHistory: data.matchHistory ?? []  
+        };
+        this.loading = false;
+        console.log('Att table')
+      },
+      (error) => {
+        console.error('Erro ao buscar dados do jogador', error);
+        this.error = true;
+        this.loading = false;
+      }
+
+    );
+  }
+
+  ngOnDestroy(): void {
+    // Evitar vazamentos de memória
+    this.subscription.unsubscribe();
   }
 
   formatDuration(seconds: number): string {
